@@ -19,6 +19,12 @@
     border-radius: 5px;
 }
 
+.face {
+    height: 100px;
+    width: 100%;
+    border: 1px solid black;
+}
+
 .right {
     width: 500px;
     height: 430px;/* 

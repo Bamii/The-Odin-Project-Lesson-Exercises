@@ -40,6 +40,18 @@ class Student
     def favourite_number
         return 7
     end
+
+    def some_loop
+        count = 0
+        loop do
+            puts "Input: "
+            line = gets
+            break if count == 2
+            # ...
+            
+            count++
+        end
+    end 
 end         # Class End
 
 # Inititalising a Class
@@ -47,3 +59,4 @@ bami = Student.new
 bami.first_name = "Bami"
 bami.introduction
 puts bami.favourite_number
+
