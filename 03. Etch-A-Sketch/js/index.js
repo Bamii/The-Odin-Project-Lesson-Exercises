@@ -1,4 +1,5 @@
 (function() {
+
     /* ------------------------------------------------------------------ */
     /*                                FLOW                                */
     /* ------------------------------------------------------------------ */
@@ -34,18 +35,23 @@
     }
 
     function reset() {
-        var promptValue = prompt('Wanna Reset? Enter a value >= 64. :)');
-        value = promptValue;
-        console.log(value);
-        /* CLEAR THE CONTAINER IN CASE THERE ARE ITEMS */
-        if(gridColumn.firstChild) {
-            let container = document.getElementById('container');
-            const gridd = document.createElement('div');
-            gridColumn.remove();
-            gridd.id = "grid-column";
-            container.appendChild(gridd);
+        var promptValue = prompt('Wanna Reset? Enter a value greater or equal to 64. (It breaks when you cancel) :)');
+        value = Number.parseInt(promptValue);
+        console.log(Number.isInteger(value));
+
+        if(value <= 64){
+            /* CLEAR THE CONTAINER IN CASE THERE ARE ITEMS */
+            if(gridColumn.firstChild) {
+                let container = document.getElementById('container');
+                const gridd = document.createElement('div');
+                gridColumn.remove();
+                gridd.id = "grid-column";
+                container.appendChild(gridd);
+            }
+            createBoxes();
+        } else {
+            reset();
         }
-        createBoxes();
     }
 
     function createBoxes() {
